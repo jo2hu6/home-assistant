@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-# Copyright 2018 IBM Corp. All Rights Reserved.
-
-# Licensed under the Apache License, Version 2.0 (the “License”)
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#  https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an “AS IS” BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 import json
 import os
@@ -125,6 +111,6 @@ if __name__ == "__main__":
     # SDK is currently confused. Only sees 'conversation' for CloudFoundry.
     authenticator = (get_authenticator_from_environment('assistant') or
                      get_authenticator_from_environment('conversation'))
-    assistant = AssistantV1(version="2019-11-06", authenticator=authenticator)
+    assistant = AssistantV1(version="2018-05-01", authenticator=authenticator)
     workspace_id = assistant_setup.init_skill(assistant)
     socketio.run(app, host='0.0.0.0', port=int(port))
